@@ -245,7 +245,7 @@ local function sh()
             local playing = tonumber(v.playing) or 0
             local max = tonumber(v.maxPlayers) or 100
             local placeVersion = tonumber(v.placeVersion) or 0
-            if playing < max and placeVersion == 1349 then
+            if playing < max and placeVersion == 1356 then
                 table.insert(list, v.id)
             end
         end
@@ -259,12 +259,12 @@ local function sh()
         tp:TeleportToPlaceInstance(game.PlaceId, list[math.random(#list)])
         return true
     else
-        nt("No Servers", "No available servers with version ≤ 1349 found")
+        nt("No Servers", "No available servers with version ≤ 1356 found")
         return false
     end
 end
 
-local v = 1347
+local v = 1356
 local isOld = game.PlaceVersion == v
 
 if isOld then
@@ -272,7 +272,7 @@ if isOld then
 else
     nt("New Server Detected!", "Version: " .. game.PlaceVersion)
     task.wait(0.5)
-    nt("Searching...", "Looking for a server with version ≤ 1349...")
+    nt("Searching...", "Looking for a server with version ≤ 1356...")
     local success = sh()
     if not success then
         task.wait(5)
